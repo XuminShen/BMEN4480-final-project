@@ -102,21 +102,6 @@ string_to_index = {string: i for i, string in enumerate(unique_d)}
 num_strings = len(unique_d)
 num_samples = len(df2['d'])
 
-# Initialize the one-hot encoded matrix
-one_hot_d = np.zeros((num_samples, num_strings))
-
-# Fill in the matrix with ones where the corresponding string is present
-for i, string in enumerate(df2['d']):
-    if string in string_to_index:
-        index = string_to_index[string]
-        one_hot_d[i, index] = 1
-one_hot_d[one_hot_d == 0] = np.nan
-one_hot_d[np.isnan(one_hot_d)] = 0
-
-unique_j = set(df['j'])
-string_to_index = {string: i for i, string in enumerate(unique_j)}
-num_strings = len(unique_j)
-num_samples = len(df2['j'])
 
 # Initialize the one-hot encoded matrix
 one_hot_j = np.zeros((num_samples, num_strings))
@@ -129,7 +114,7 @@ for i, string in enumerate(df2['d']):
 one_hot_j[one_hot_j == 0] = np.nan
 one_hot_j[np.isnan(one_hot_j)] = 0
 
-combined_matrix = np.hstack((one_hot_v, one_hot_d, one_hot_j))
+combined_matrix = np.hstack((one_hot_v, one_hot_j))
 print(combined_matrix.shape)
 #combined_matrix = np.hstack((one_hot_v, one_hot_j))
 np.save('vdj_onehot_1600.npy', combined_matrix)
