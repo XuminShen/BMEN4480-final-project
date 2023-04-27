@@ -1,0 +1,15 @@
+These are all the files needed for protein folding prediction. Here is a description of which each one does.
+
+GenerateFullChainVDJDB.ipynb: This file takes in the top8antigen.csv and the Master_file_v2.csv (contains TCR3d structure info) to generate imputed beta chains for the VDJdb dataset.
+
+ProteinStructureEvaluation.ipynb: This file reads in a two folder of pdb files. One that contain the ground truth and one that contains the predicted protein structures. This evaluates each 
+structure with its corresponding ground truth file and generates a RMSD for each predicted structure.
+
+ProteinStructureEvalutation_VDJDB.ipynb: This file evaluates the variance in the cdr3 structure of the imputed and predicted VDJdb proteins. This file only takes the predicted protein folder as 
+input.
+
+DistanceMatrixGeneration.ipynb: This file takes in the predicted protein structures and creates csv files with the pariwise distance between the center of each amino acid.
+
+
+**Protein Folding Prediction**
+All protien folding was don using ColabFolds AlphaFold_batch.ipynb. This google colab file can be found at https://github.com/sokrypton/ColabFold.
