@@ -1,5 +1,18 @@
 All the files that are used for distance matrix generation, protein imputation, and evalutation are found here.
 
 Folder Descriptions:
-1144_V: Contains imputed beta chains where the V genes match in the TCR3d and VDJdb data. Used for imputation evaluation and
-1600: Contains the pdb 
+1144_V: Contains imputed beta chains where the V genes match in the TCR3d and VDJdb data. Used for protein prediction for the TCR3d and VDJdb data
+imputation evaluation
+1600: Contains the Distance Matrices used for the Antigen binding prediction.
+1600_Fasta: Contains the fasta files used for prediction with ColabFold
+b_chain: Contains the PDB files from TCR3d that are attached to MHC.
+b_chain_Fasta: Contains the fasta files for b_chains used for prediction with ColabFold.
+BestControl: The pdb structures that were predicted with MSA
+matchV_results: Contains the PDB structures used for validation of imputation.
+result_single: Contains the single sequence prediction for the 1600_Fasta files. Used to generate the 1600 folder.
+
+File Description:
+1600_align_data.csv: data needed for matching with VDJdb and input for antigne prediction.
+Master_file_v2: contains all useful information for PDB TCRs
+MHC1 + MCH2: Similar to Master_file_v2. Contains information on known TCRa
+top8antigens.csv: contains the vdjdb data base used for imputation and prediction
